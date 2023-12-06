@@ -69,6 +69,8 @@ git clone https://github.com/openmrs/openmrs-core.git
 
 ### Build Command
 
+
+
 After you have taken care of the [Prerequisites](#prerequisites)
 
 Execute the following
