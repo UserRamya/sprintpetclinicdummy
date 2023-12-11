@@ -19,15 +19,15 @@ pipeline {
             }
         }
 
-        // stage('build') {
-        //     steps {
-        //         // Use double quotes for the shell command
-        //         //sh "mvn clean package"
+        stage('build') {
+            steps {
+                // Use double quotes for the shell command
+                //sh "mvn clean package"
                 
-        //         // Archive the JAR file with a more specific path
-        //         archiveArtifacts artifacts: 'target/spring-petclinic-*.jar'
-        //     }
-        // }
+                // Archive the JAR file with a more specific path
+                archiveArtifacts artifacts: '**/spring-petclinic-*.jar'
+            }
+        }
     }
 
     post {
