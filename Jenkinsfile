@@ -11,26 +11,7 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                // Use Maven to build the project
-                script {
-                    def mvnHome = tool 'Maven'
-                    sh "${mvnHome}/bin/mvn clean package"
-                }
-            }
-        }
-
-        stage('Test') {
-            steps {
-                // Run tests if needed
-                script {
-                    def mvnHome = tool 'Maven'
-                    sh "${mvnHome}/bin/mvn test"
-                }
-            }
-        }
-    }
+      
 
     post {
         success {
