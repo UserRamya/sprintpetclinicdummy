@@ -15,7 +15,6 @@ pipeline {
             steps {                
                 git url: 'https://github.com/UserRamya/sprintpetclinicdummy.git'
                     branch: 'dev2'
-                   
             } 
             
         }
