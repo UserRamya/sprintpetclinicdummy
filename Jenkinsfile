@@ -12,7 +12,7 @@ pipeline {
 
     stages {
         stage('git') {
-            step {                
+            steps {                
                 git url: 'https://github.com/UserRamya/sprintpetclinicdummy.git'
 
                    branch: 'dev2'
@@ -23,7 +23,7 @@ pipeline {
     
 
         stage('build') {
-            step {
+            steps {
                 sh 'mvn clean package'
                 archiveArtifacts artifacts: '**/spring-petclinic-*jar'
             }
