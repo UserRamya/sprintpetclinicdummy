@@ -25,7 +25,7 @@ pipeline {
                 //sh "mvn clean package"
                 
                 // Archive the JAR file with a more specific path
-                archiveArtifacts artifacts: '**/spring-petclinic-*.jar'
+                archiveArtifacts artifacts: 'workspace/target/spring-petclinic-*.jar'
             }
         }
     }
