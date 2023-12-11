@@ -22,7 +22,7 @@ pipeline {
         stage('build') {
             steps {
                 // Use double quotes for the shell command
-                bat 'mvn clean package'
+                 sh 'mvn clean package'
                 
                 // Archive the JAR file with a more specific path
                // archiveArtifacts artifacts: '**/*.jar'
