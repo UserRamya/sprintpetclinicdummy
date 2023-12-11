@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-  stages {
+ stages {
         stage('Checkout') {
             steps {
                 // Checkout the source code from your version control system
@@ -10,8 +10,7 @@ pipeline {
                 }
             }
         }
-
-      
+    }
 
     post {
         success {
