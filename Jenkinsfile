@@ -22,8 +22,8 @@ pipeline {
         stage('build') {
             steps {
                 // Use double quotes for the shell command
-                 sh 'mvn clean package'
-                
+                 //sh 'clean package'
+                sh "${mvnHome}/bin/mvn clean package"
                 // Archive the JAR file with a more specific path
                // archiveArtifacts artifacts: '**/*.jar'
               // junit testresults: '**/TEST*.xml'
