@@ -25,7 +25,8 @@ pipeline {
                 //sh "mvn clean package"
                 
                 // Archive the JAR file with a more specific path
-                archiveArtifacts artifacts: '**/*.jar'
+               // archiveArtifacts artifacts: '**/*.jar'
+               junit testresults: '**/TEST*.xml'
             }
         }
     }
