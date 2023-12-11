@@ -1,0 +1,34 @@
+pipeline{
+    
+    agent any
+
+    options{             
+         timeout(time: 1, unit: 'SECONDS')
+    }
+   
+    triggers{
+        pollSCM('* * * * *')
+    }
+
+    stages{
+        stage{
+            step('git')
+            {
+                
+                giturl :https://github.com/UserRamya/spring-petclinic.git
+                branch : 'dev'
+            } 
+            
+        }
+    }
+
+    stages{
+        stage{
+            step('build'){
+                sh 'mvn clean package'
+                archiveArtifacts artifacts:'**/spring-petclinic-*jar'
+            }
+        }
+    }
+
+}
