@@ -1,11 +1,7 @@
 pipeline {
     agent any
 
-    environment {
-        // Define environment variables if needed
-    }
-
-    stages {
+  stages {
         stage('Checkout') {
             steps {
                 // Checkout the source code from your version control system
