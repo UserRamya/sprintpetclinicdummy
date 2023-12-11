@@ -1,5 +1,5 @@
 pipeline {
-    agent 'none'
+    agent any
 
     options {
        timeout(time: 10, unit: 'HOURS') 
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 // Use double quotes for the shell command
                  //sh 'clean package'
-                sh "${mvnHome}/bin/mvn clean package"
+                sh "clean package"
                 // Archive the JAR file with a more specific path
                // archiveArtifacts artifacts: '**/*.jar'
               // junit testresults: '**/TEST*.xml'
