@@ -1,31 +1,41 @@
 pipeline {
-    
     agent any
 
-    options {             
-         timeout(time: 30, unit: 'MINUTES')
+    options {
+        timeout(time: 30, unit: 'MINUTES')
     }
-   
+
     triggers {
         pollSCM('* * * * *')
     }
 
     stages {
         stage('git') {
-            steps {                
-                git url: 'https://github.com/UserRamya/sprintpetclinicdummy.git'
-                    branch: 'dev2'
-            } 
-            
+            steps {
+                // Use single quotes for the URL and add parentheses for the git step
+                script {
+                    git(url: 'https://github.com/UserRamya/sprintpetclinicdummy.git', branch: 'dev2')
+                }
+            }
         }
-    
 
         stage('build') {
             steps {
-                sh 'mvn clean package'
-                   archiveArtifacts artifacts: '**/spring-petclinic-*jar'
+                // Use double quotes for the shell command
+                sh "mvn clean package"
+                
+                // Archive the JAR file with a more specific path
+                archiveArtifacts artifacts: 'target/spring-petclinic-*.jar'
             }
         }
     }
 
+    post {
+        success {
+            echo 'Build and package successful!'
+        }
+        failure {
+            echo 'Build or package failed!'
+        }
+    }
 }
