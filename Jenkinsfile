@@ -12,8 +12,9 @@ pipeline {
 
     stages {
         stage('git') {
-            steps {                
+            step {                
                 git url: 'https://github.com/UserRamya/sprintpetclinicdummy.git'
+
                    branch: 'dev2'
                    
             } 
