@@ -16,7 +16,7 @@ pipeline{
             {
                 
                 giturl :'https://github.com/UserRamya/spring-petclinic.git'
-                branch : 'dev'
+                branch :'dev'
             } 
             
         }
