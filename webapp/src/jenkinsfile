@@ -15,7 +15,7 @@ pipeline{
             step('git')
             {
                 
-                giturl :https://github.com/UserRamya/spring-petclinic.git
+                giturl :'https://github.com/UserRamya/spring-petclinic.git'
                 branch : 'dev'
             } 
             
